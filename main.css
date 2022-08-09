@@ -1,0 +1,88 @@
+:root {
+  --main-color: aquamarine;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-family: sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  perspective: 300px;
+}
+
+.box {
+  width: 90%;
+  padding: 1rem;
+  position: relative;
+  transition-duration: .5s;
+  background-color: black;
+}
+
+.box .motors {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.box .motor {
+  flex-grow: 1;
+  aspect-ratio: 1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition-duration: .5s;
+}
+
+.box .motor img {
+  width: 100%;
+  height: 100%;
+}
+
+.box .motor.freezing {
+  background-color: brown;
+}
+
+.box .control-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box .control-btns button {
+  padding: .5rem 1rem;
+  background-color: cyan;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-right: 2rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.box .time-left {
+  background-color: cyan;
+  color: white;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+}
+
+@keyframes work {
+  100% {
+    transform: rotate(360deg);
+  }
+}
